@@ -4,24 +4,24 @@ const Discord = require('discord.js')
 exports.run = async(client, message, args) => {
  
  
-const emoji1 = message.client.emojis.get('??');
-const emoji2 = message.client.emojis.get('??');
-const emoji3 = message.client.emojis.get('??');
-const emoji4 = message.client.emojis.get('??');
-const emoji5 = message.client.emojis.get('??');
-const emoji6 = message.client.emojis.get('??');
-const emoji7 = message.client.emojis.get('??');
+const emoji1 = message.client.emojis.get('ğŸ“');
+const emoji2 = message.client.emojis.get('ğŸ“');
+const emoji3 = message.client.emojis.get('ğŸ“');
+const emoji4 = message.client.emojis.get('ğŸ“');
+const emoji5 = message.client.emojis.get('ğŸ“');
+const emoji6 = message.client.emojis.get('ğŸ“');
+const emoji7 = message.client.emojis.get('ğŸ“');
       let isEnabled;
-      message.reply("Canlı Destek Komutunu Kullandığınız İçin Teşekkürler. Birazdan Yetkili Ekibimiz sizinle ilgilenicektir.");
+      message.reply("Bu Koomutu KullandÄ±ÄŸÄ±nÄ±z iÃ§in teÅŸekkÃ¼rler Bir Yetkili Sizinlle Ä°lgilinecektir");
       let mesaj = args.slice(0).join(' ');
       let chan = message.channel;
       let destekKanal = "504305757240426528";
       const embed = new Discord.RichEmbed()
-        .addField('Uyarı', `?? Canlı Destek Çağrısı`)
+        .addField('Uyari', `ğŸ“ Canli Destek Geldi`)
         .setAuthor(`${message.author.tag} (${message.author.id})`, `${message.author.avatarURL}`)
         .setColor("RANDOM")
-        .addField(`Bilgiler`, `**Sunucu**: ${message.guild.name} (${message.guild.id}) \n**Kanal**: ${message.channel.name} (${message.channel.id}) \n**Destek İsteyen**: ${message.author.tag} (${message.author.id}) \n**Destek Mesajı**: ${mesaj}`)
-        .setFooter("Canlı Destek")
+        .addField(`Bilgiler`, `**Sunucu**: ${message.guild.name} (${message.guild.id}) \n**Kanal**: ${message.channel.name} (${message.channel.id}) \n**Destek Ãsteyen**: ${message.author.tag} (${message.author.id}) \n**Destek MesajÃ½**: ${mesaj}`)
+        .setFooter("Canli Destek")
         .setTimestamp()
       client.channels.get(destekKanal).send({
         embed: embed
@@ -29,33 +29,33 @@ const emoji7 = message.client.emojis.get('??');
     const collector = client.channels.get(destekKanal).createCollector(message => message.content.startsWith(''), {
       time: 0
     })
-    client.channels.get(destekKanal).send('?? Destek çagrısı bağlanmak için `katıl` yazınız. İptal Etmek İçin `kapat` yazınız.')
+    client.channels.get(destekKanal).send('?? Destek Ã§agrisi baglanmak iÃ§in `katil` yaziniz. Iptal Etmek iÃ§in `kapat` yaziniz.')
     collector.on('message', (message) => {
       if (message.content === 'kapat') collector.stop('aborted')
-      if (message.content === 'katıl') collector.stop('success')
+      if (message.content === 'katil') collector.stop('success')
     })
     collector.on('end', (collected, reason) => {
-      if (reason === 'time') return message.reply('?? Çagrı zaman aşımına uğradı.')
+      if (reason === 'time') return message.reply('?? Ã‡agri zaman asimina ugradi.')
       if (reason === 'aborted') {
-        message.reply('Çağrı reddedildi.')
-        client.channels.get(destekKanal).send('?? Başarıyla çağrı reddedildi.')
+        message.reply('Ã‡aÃ°rÃ½ reddedildi.')
+        client.channels.get(destekKanal).send('ğŸ“ basariyla Ã‡agri Reddedildi!.')
       }
       if (reason === 'success') {
-        client.channels.get(destekKanal).send('?? Destek çagrısı alındı!')
-        client.channels.get(destekKanal).send('?? Destek çağrısını kapatmak için `kapat` yazınız.')
+        client.channels.get(destekKanal).send('ğŸ“ Destek CaÄŸrisi Alindi!')
+        client.channels.get(destekKanal).send('ğŸ“ Destek Ã§agrisini kapatmak iÃ§in `kapat` yaziniz.')
         chan.send(`${message.author}`)
-        chan.send('Çağrınız bir destek yetkili tarafından alındı!')
-        chan.send('En Yakın Zamanda Size Yardımcı Olacagız.')
-        chan.send('Destek çagrısı kapatmak için `kapat` yazınız.')
+        chan.send('Ã‡agriniz bir destek yetkili tarafindan alindi!')
+        chan.send('En Yakin Zamanda Size Yardimci Olacagiz.')
+        chan.send('Destek Ã§agrisi kapatmak iÃ§in `kapat` yaziniz.')
         isEnabled = true
         client.on('message', message => {
           function contact() {
             if (isEnabled === false) return
             if (message.author.id === client.user.id) return
             if (message.content.startsWith('kapat')) {
-              message.channel.send('???? Çağrı Kapatıldı.')
-              if (message.channel.id === chan.id) client.channels.get(destekKanal).send('?? Çağrı karşı taraftan kapatıldı.')
-              if (message.channel.id === destekKanal) chan.send('?? Çağrı karşı taraftan kapatıldı.')
+              message.channel.send('ğŸ“ğŸ“ Ã‡agri Kapatildi.')
+              if (message.channel.id === chan.id) client.channels.get(destekKanal).send('ğŸ“ Ã‡agri karsi taraftan kapatildi.')
+              if (message.channel.id === destekKanal) chan.send('ğŸ“ Ã‡agri karsi taraftan kapatildi.')
  
               return isEnabled = false
             }
@@ -76,7 +76,7 @@ const emoji7 = message.client.emojis.get('??');
 };
  
 exports.help = {
-  name: 'canlıdestek',
-  description: 'Canlı Destek Tablebi Oluşturur.',
-  usage: 'canlıdestek'
+  name: 'canlidestek',
+  description: 'Canli Destek Tablebi Olusturur.',
+  usage: 'canlidestek'
 };
