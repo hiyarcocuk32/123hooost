@@ -43,7 +43,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'canlýdestek',
-  description: 'Bir Canlý Destek Talebi Açarsýnýz!',
-  usage: 'canlýdestek'
+  name: 'destek',
+  description: 'Bir Destek Talebi Gönderirsiniz!',
+  usage: 'destek'
 };
