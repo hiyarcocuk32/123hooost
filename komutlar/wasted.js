@@ -23,6 +23,15 @@ module.exports.run = async (bot, message, args) => {
         });
     };
 
-module.exports.help = {
-  name: 'wasted'
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'wasted',
+  description: 'Avatarınıza Wasted Efekti Koyar.',
+  usage: 'wasted'
 };
