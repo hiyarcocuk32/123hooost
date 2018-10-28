@@ -18,9 +18,9 @@ exports.run = async(client, message, args) => {
         }})
 
         const embed = new Discord.RichEmbed()
-        .setAuthor("» SyncSBot| Canlı Destek")
-        .setDescription(`** :ponit_right: Merhaba! Müsait bir yetkilimiz sizinle ilgilenecektir.\nEğer ilgilenen olmazsa birisiyle özel mesaja geçebilirsiniz. Ayrıca [%kapat] yazarak kapatabilisiniz :point_left:**`)
-        .setFooter('» SyncSBot| Canlı Destek', client.user.avatarURL)
+        .setAuthor("Â» SyncSBot| CanlÃ½ Destek")
+        .setDescription(`** :ponit_right: Merhaba! MÃ¼sait bir yetkilimiz sizinle ilgilenecektir.\nEÃ°er ilgilenen olmazsa birisiyle Ã¶zel mesaja geÃ§ebilirsiniz. AyrÃ½ca [%kapat] yazarak kapatabilisiniz :point_left:**`)
+        .setFooter('Â» SyncSBot| CanlÃ½ Destek', client.user.avatarURL)
         .setTimestamp()
         ch.send(embed).catch()
         ch.awaitMessages((msg)=> {
@@ -43,7 +43,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'canlıdestek',
-  description: 'Bir Canlı Destek Talebi Açarsınız!',
-  usage: 'canlıdestek'
+  name: 'canlÃ½destek',
+  description: 'Bir CanlÃ½ Destek Talebi AÃ§arsÃ½nÃ½z!',
+  usage: 'canlÃ½destek'
 };
