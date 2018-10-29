@@ -21,11 +21,7 @@ console.log('Bot hazır.');
         
         `Beni Eklermisin %davet`,
 
-
-
         `Yapımcım RK|BebeMustafa`
-
-
     ];
 
     setInterval(function() {
