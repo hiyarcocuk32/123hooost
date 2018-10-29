@@ -7,7 +7,7 @@ exports.run = (client, message, params) => {
   if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
-    message.author.sendCode('asciidoc', `= Komut Listesi =\n\n[Komut hakkýnda bilgi için ${ayarlar.prefix}yardým <komut adý>]\n\n${client.commands.map(c => `${ayarlar.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`);
+    message.author.sendCode('asciidoc', `= Komut Listesi =\n\n[Komut hakkinda bilgi için ${ayarlar.prefix}yardIm <komut adi>]\n\n${client.commands.map(c => `${ayarlar.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`);
   if (message.channel.type !== 'dm') {
     const ozelmesajkontrol = new Discord.RichEmbed()
     .setColor(0x00AE86)
@@ -19,7 +19,7 @@ exports.run = (client, message, params) => {
     let command = params[0];
     if (client.commands.has(command)) {
       command = client.commands.get(command);
-      message.author.sendCode('asciidoc', `= ${command.help.name} = \n${command.help.description}\nDoðru kullaným: ` + prefix + `${command.help.usage}`);
+      message.author.sendCode('asciidoc', `= ${command.help.name} = \n${command.help.description}\nDogru kullanim: ` + prefix + `${command.help.usage}`);
     }
   }
 };
