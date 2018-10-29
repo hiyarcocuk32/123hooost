@@ -89,6 +89,13 @@ client.on('message', msg => {
 	}
 });
 
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === '<@506437020852158468>') }
+                if (!msg.guild.member(msg.author).hasPermission("BAN_MEMBERS")) {
+                        msg.author.sendMessage('Ne Var Lan NEEEEE Burda Smackdown 2K18 2001 izliyoz Lan Tirrek **Bidaha Etiketleme**');
+		} else {
+		msg.reply('Ne Var Lan NEEEEE Burda Smackdown 2K18 2001 izliyoz Lan Tirrek **Bidaha Etiketleme**');	
+
 ////////////////////////
 
 client.on("guildMemberAdd", member => {
