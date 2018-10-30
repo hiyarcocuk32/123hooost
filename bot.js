@@ -4,7 +4,6 @@ const ayarlar = require('./ayarlar.json');
 const chalk = require('chalk');
 const fs = require('fs');
 const moment = require('moment');
-const Jimp = require('jimp');
 require('./util/eventLoader')(client);
 
 var prefix = ayarlar.prefix;
@@ -89,13 +88,6 @@ client.on('message', msg => {
 	}
 });
 
-client.on('message', msg => {
-  if (msg.content.toLowerCase() === '<@506437020852158468>') {
-                if (!msg.guild.member(msg.author).hasPermission("BAN_MEMBERS")) {
-                        msg.author.sendMessage('Ne Var Lan NEEEEE Burda Smackdown 2K18 2001 izliyoz Lan Tirrek **Bidaha Etiketleme**');
-		} else {
-		msg.reply('Ne Var Lan NEEEEE Burda Smackdown 2K18 2001 izliyoz Lan Tirrek **Bidaha Etiketleme**');	
-
 ////////////////////////
 
 client.on("guildMemberAdd", member => {
@@ -164,6 +156,8 @@ client.on("guildMemberRemove", async member => {
     })
 
 
+	
+	
 ////////////////////////
 
 client.elevation = message => {
@@ -176,6 +170,14 @@ client.elevation = message => {
   return permlvl;
 };
 
+var regToken = /[\w\d]{24}\.[\w\d]{6}\.[\w\d-_]{27}/g;
 
+client.on('warn', e => {
+  console.log(chalk.bgYellow(e.replace(regToken, 'that was redacted')));
+});
+
+client.on('error', e => {
+  console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
+});
 
 client.login(process.env.BOT_TOKEN);
