@@ -1,19 +1,27 @@
 {
-  "name": "syncsbot",
-  "version": "0.1.0",
-  "description": "BULAMADIM",
-  "main": "bot.js",
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "hello-express",
+  "version": "0.0.1",
+  "description": "A simple Node app built on Express, instantly up and running.",
+  "main": "server.js",
   "scripts": {
-    "test": "node bot.js"
+    "start": "node server.js"
   },
-  "author": "ismim uzun",
-  "license": "ISC",
   "dependencies": {
-    "chalk": "^2.4.1",
-    "discord.js": "^11.4.2",
-    "jimp": "^0.5.6",
-    "moment": "^2.22.2",
-    "moment-duration-format": "^2.2.2",
-    "ms": "^2.1.1"
-  }
+    "express": "^4.16.3"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/hello-express"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
 }
